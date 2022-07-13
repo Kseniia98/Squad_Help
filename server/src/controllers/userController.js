@@ -59,10 +59,10 @@ module.exports.changeMark = async (req, res, next) => {
       { isolationLevel: bd.Sequelize.Transaction.ISOLATION_LEVELS.READ_UNCOMMITTED });
     const query = ratingQueries.getMarkQuery(offerId, userId, mark, isFirst, transaction);
     await query();
-    const offersArray = await bd.Ratings.findAll({
+    const offersArray = await bd.Rating.findAll({
       include: [
         {
-          model: bd.Offers,
+          model: bd.Offer,
           required: true,
           where: { userId: creatorId },
         },
@@ -121,7 +121,7 @@ module.exports.payment = async (req, res, next) => {
         prize,
       });
     });
-    await bd.Contests.bulkCreate(req.body.contests, transaction);
+    await bd.Contest.bulkCreate(req.body.contests, transaction);
     transaction.commit();
     res.send();
   } catch (err) {
