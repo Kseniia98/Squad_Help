@@ -1,5 +1,4 @@
 const bd = require('../models');
-const NotFound = require('../errors/UserNotFoundError');
 const RightsError = require('../errors/RightsError');
 const ServerError = require('../errors/ServerError');
 const CONSTANTS = require('../constants');
@@ -44,7 +43,7 @@ module.exports.canGetContest = async (req, res, next) => {
 
 module.exports.onlyForCreative = (req, res, next) => {
   if (req.tokenData.role !== CONSTANTS.CREATOR) {
-    next(new RightsError());
+    next(new RightsError('this page only for creators'));
   } else {
     next();
   }
@@ -117,4 +116,3 @@ module.exports.canUpdateContest = async (req, res, next) => {
     next(new ServerError());
   }
 };
-

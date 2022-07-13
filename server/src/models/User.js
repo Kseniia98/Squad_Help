@@ -1,3 +1,4 @@
+const { CUSTOMER, CREATOR } = require("../constants");
 
 
 module.exports = (sequelize, DataTypes) => {
@@ -35,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: 'anon.png',
     },
     role: {
-      type: DataTypes.ENUM('customer', 'creator'),
+      type: DataTypes.ENUM(CUSTOMER, CREATOR),
       allowNull: false,
     },
     balance: {
