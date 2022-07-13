@@ -1,3 +1,4 @@
+require('dotenv').config();
 const http = require('http');
 const express = require('express');
 const cors = require('cors');
@@ -19,5 +20,3 @@ const server = http.createServer(app);
 server.listen(PORT,
   () => console.log(`Example app listening on port ${ PORT }!`));
 controller.createConnection(server);
-
-
