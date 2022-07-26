@@ -150,8 +150,7 @@ class ContestForm extends React.Component {
                   }}
                   type="file"
                 />
-                {this.props.isEditContest
-                  ? <button type="submit" className={styles.changeData}>Set Data</button> : null}
+                <button type="submit" className={styles.changeData}>Set Data</button>
               </Form>
             </Formik>
           </div>

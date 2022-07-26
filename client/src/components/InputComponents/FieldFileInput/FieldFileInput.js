@@ -1,43 +1,39 @@
 import React from 'react';
-import { Field } from 'formik';
+import { useField } from 'formik';
 
-const FieldFileInput = ({ classes, ...rest }) => {
+const FieldFileInput = (props) => {
   const {
     fileUploadContainer, labelClass, fileNameClass, fileInput,
-  } = classes;
+  } = props.classes;
+  const [field, meta, helpers] = useField(props.name);
+  const { value, ...rest } = field;
+
+  const onChange = (e) => {
+    const file = e.target.files[0];
+    helpers.setValue(file);
+
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+  };
 
   return (
-    <Field name={rest.name}>
-      {(props) => {
-        const {
-          field,
-        } = props;
-
-        const getFileName = () => {
-          if (props.field.value) {
-            return props.field.value.name;
-          }
-          return '';
-        };
-
-        return (
-          <div className={fileUploadContainer}>
-            <label htmlFor="fileInput" className={labelClass}>
-              Choose file
-            </label>
-            <span id="fileNameContainer" className={fileNameClass}>
-              {getFileName()}
-            </span>
-            <input
-              {...field}
-              className={fileInput}
-              id="fileInput"
-              type="file"
-            />
-          </div>
-        );
-      }}
-    </Field>
+    <div>
+      <div className={fileUploadContainer}>
+        <label htmlFor="fileInput" className={labelClass}>
+          Choose file
+        </label>
+        <span id="fileNameContainer" className={fileNameClass}>
+          {value.name}
+        </span>
+        <input
+          {...rest}
+          onChange={onChange}
+          className={fileInput}
+          id="fileInput"
+          type="file"
+        />
+      </div>
+    </div>
   );
 };
 

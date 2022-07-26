@@ -30,7 +30,7 @@ const Payment = (props) => {
       history: props.history,
     });
   };
-
+  
   const goBack = () => {
     props.history.goBack();
   };
@@ -49,7 +49,7 @@ const Payment = (props) => {
       <div className={styles.mainContainer}>
         <div className={styles.paymentContainer}>
           <span className={styles.headerLabel}>Checkout</span>
-          {error && <Error data={error.data} status={error.status} clearError={clearPaymentStore} />}
+          { error ? error && <Error data={error.data} status={error.status} clearError={clearPaymentStore} /> : null}
           <PayForm sendRequest={pay} back={goBack} isPayForOrder />
         </div>
         <div className={styles.orderInfoContainer}>
