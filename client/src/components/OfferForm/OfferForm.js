@@ -65,7 +65,8 @@ const OfferForm = (props) => {
       >
         <Form className={styles.form}>
           {renderOfferInput()}
-          {valid && <button type="submit" className={styles.btnOffer}>Send Offer</button>}
+          {valid}
+          <button type="submit" className={styles.btnOffer}>Send Offer</button>
         </Form>
       </Formik>
     </div>
