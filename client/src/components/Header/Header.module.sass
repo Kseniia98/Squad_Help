@@ -32,6 +32,7 @@
       font-size: 14px
       font-weight: 400
       margin-bottom: 10px
+      cursor: pointer
 
       &:hover
         color: white
@@ -45,6 +46,8 @@
 
       .nav
         display: flex
+        text-transform: uppercase
+        cursor: pointer 
 
         ul
           margin: 0
@@ -61,6 +64,14 @@
           &:last-child li
             ul
               width: 200px
+
+          a
+            font-size: 12px
+            text-decoration: none
+            color: #333
+            
+            &:hover
+              color: #f27e51
 
           li
             display: flex
@@ -138,6 +149,7 @@
       display: flex
       border-left: 1px solid #ebebeb
       height: 40px
+      cursor: pointer
       @media(max-width: 600px)
         margin-left: 60px
       @media(max-width: 400px)
@@ -151,16 +163,19 @@
 
       .userInfo
         display: flex
+        position: relative
         justify-content: center
         align-items: center
         padding: 0 15px
         border-right: 1px solid #ebebeb
+        height: 100%
 
         &:hover
           ul
             display: block
             position: absolute
-            top: 45px
+            top: 100%
+            left: 0px
 
         ul
           border: 1px solid #eee
