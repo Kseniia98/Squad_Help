@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 import styles from './Header.module.sass';
 import CONSTANTS from '../../constants';
-import { clearUserStore, headerRequest } from '../../actions/actionCreator';
+import { changeChatShow, clearUserStore, headerRequest } from '../../actions/actionCreator';
 import Logo from '../Logo';
 
 class Header extends React.Component {
@@ -19,15 +19,18 @@ class Header extends React.Component {
     };
 
     renderLoginButtons = () => {
-      if (this.props.data) {
+      const { data } = this.props.userStore;
+      const { changeShow } = this.props;
+      
+      if (data) {
         return (
           <>
             <div className={styles.userInfo}>
               <img
-                src={this.props.data.avatar === 'anon.png' ? CONSTANTS.ANONYM_IMAGE_PATH : `${CONSTANTS.publicURL}${this.props.data.avatar}`}
+                src={data.avatar === 'anon.png' ? CONSTANTS.ANONYM_IMAGE_PATH : `${CONSTANTS.publicURL}${data.avatar}`}
                 alt="user"
               />
-              <span>{`Hi, ${this.props.data.displayName}`}</span>
+              <span>{`Hi, ${data.displayName}`}</span>
               <img src={`${CONSTANTS.STATIC_IMAGES_PATH}menu-down.png`} alt="menu" />
               <ul>
                 <Link
@@ -65,7 +68,12 @@ class Header extends React.Component {
                 </li>
               </ul>
             </div>
-            <img src={`${CONSTANTS.STATIC_IMAGES_PATH}email.png`} className={styles.emailIcon} alt="email" />
+            <img 
+              src={`${CONSTANTS.STATIC_IMAGES_PATH}email.png`} 
+              className={styles.emailIcon} 
+              alt="email" 
+              onClick={() => changeShow()} 
+            />
           </>
         );
       }
@@ -84,7 +92,9 @@ class Header extends React.Component {
     };
 
     render() {
-      if (this.props.isFetching) {
+      const { data, isFetching } = this.props.userStore;
+
+      if (isFetching) {
         return null;
       }
       return (
@@ -200,7 +210,7 @@ class Header extends React.Component {
                   </li>
                 </ul>
               </div>
-              {this.props.data && this.props.data.role !== CONSTANTS.CREATOR
+              {data && data.role !== CONSTANTS.CREATOR
                         && <div className={styles.startContestBtn} onClick={this.startContests}>START CONTEST</div>}
             </div>
           </div>
@@ -209,10 +219,15 @@ class Header extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => state.userStore;
+const mapStateToProps = (state) => {
+  const { chatStore, userStore } = state;
+  return { chatStore, userStore };
+}
+
 const mapDispatchToProps = (dispatch) => ({
   getUser: () => dispatch(headerRequest()),
   clearUserStore: () => dispatch(clearUserStore()),
+  changeShow: () => dispatch(changeChatShow()),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header));

@@ -14,7 +14,7 @@ export const updateUser = (data) => httpClient.patch('user/updateUser', data);
 
 // /chat
 export const getPreviewChat = () => httpClient.get('chat/getPreview');
-export const getDialog = (data) => httpClient.get('chat/getChat', data);
+export const getDialog = (data) => httpClient.post('chat/getChat', data);
 export const newMessage = (data) => httpClient.post('chat/newMessage', data);
 export const changeChatFavorite = (data) => httpClient.post('chat/favorite', data);
 export const changeChatBlock = (data) => httpClient.post('chat/blackList', data);
