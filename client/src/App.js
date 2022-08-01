@@ -12,6 +12,7 @@ import Home from './pages/Home/Home';
 import UserProfile from './pages/UserProfile/UserProfile';
 import ContestPage from './pages/ContestPage/ContestPage';
 import ContestCreationPage from './pages/ContestCreation/ContestCreationPage';
+import HowItWorks from './pages/HowItWorks/HowItWorks.jsx';
 
 import PrivateHoc from './components/PrivateHoc/PrivateHoc';
 import NotFound from './components/NotFound/NotFound';
@@ -55,6 +56,7 @@ function App () {
         <Route exact path="/registration" component={OnlyNotAuthorizedUserHoc(RegistrationPage)} />
         <Route exact path="/payment" component={PrivateHoc(Payment)} />
         <Route exact path="/startContest" component={PrivateHoc(StartContestPage)} />
+        <Route exact path="/howitworks" component={HowItWorks} />
         <Route
           exact
           path="/startContest/nameContest"

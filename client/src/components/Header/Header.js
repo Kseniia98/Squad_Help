@@ -145,7 +145,7 @@ class Header extends React.Component {
                       alt="menu"
                     />
                     <ul>
-                      <a href="http://www.google.com"><li>HOW IT WORKS</li></a>
+                      <Link to={'/howitworks'}><li>HOW IT WORKS</li></Link>
                       <a href="http://www.google.com"><li>PRICING</li></a>
                       <a href="http://www.google.com"><li>AGENCY SERVICE</li></a>
                       <a href="http://www.google.com"><li>ACTIVE CONTESTS</li></a>

@@ -1,0 +1,402 @@
+.box
+  position: relative
+  
+.container_wrapper
+  padding-top: 100px 
+
+h1
+  font-weight: 600
+  font-size: 2.5rem
+  margin-bottom: 0.5rem
+
+h2
+  font-size: 2rem
+  margin-bottom: 0.5rem
+  font-weight: 400
+
+h3
+  font-size: 1.5rem
+  margin-bottom: 0.5rem
+  line-height: 2rem
+
+p
+    color: #77838f
+    line-height: 1.7
+    font-size: 1.1rem
+    margin-bottom: 1rem
+
+.img_icon
+  max-width: 70px
+  margin-bottom: 1.5rem
+
+.video_button
+  font-weight: 500
+  background-color: #377dff
+  color: #fff
+  border: 1px solid transparent
+  padding: 0.75rem 1rem
+  margin: 0.75rem 0
+  border-radius: 6.1875rem
+  cursor: pointer
+  min-width: 9.6875rem
+  &:hover
+    .video_button
+    transition: all 0.2s ease-in-out
+    box-shadow: 0 4px 11px rgb(55 125 255 / 35%)
+    transform: translateY(-0.25em)
+
+.header_span
+  display: inline-block
+  padding: 0.4375rem 0.9375rem
+  margin-bottom: 0.5rem
+  color: #377dff
+  background: rgba(55,125,255,.1)
+  border-color: transparent
+  border: 1px solid transparent
+  border-radius: 6.1875rem
+  font-size: .6875rem
+  font-weight: 400
+  
+.container
+  max-width: 1140px
+  display: flex
+  flex-direction: column
+  justify-content: center
+  margin: 0px auto
+  width: 100%
+  padding: 0px 15px
+
+
+  .header
+    display: flex
+    padding-bottom: 5rem
+    width: 100%
+    font-size: 1rem
+    font-weight: 400
+    line-height: 1.5
+    color: #1e2022
+    text-align: left
+
+    .header_info
+      width: 50%
+
+      .video_off
+        display: none      
+
+      .video_on
+        display: block
+        z-index: 550
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0px
+        left: 0px
+        background-color: rgba(0, 0, 0, 0.5)
+
+        .video
+          display: flex
+          align-items: flex-start
+          justify-content: center
+          margin: 0 auto
+          
+          button
+            height: 40px
+            width: 50px
+
+
+    .header_img
+      display: flex
+      justify-content: center
+      align-items: flex-start
+      width: 50%
+      img
+        max-width: 390px
+
+  .use_block
+    padding: 2rem 0
+
+    .use_header
+      text-align: center
+      margin-bottom: 4rem
+
+    .use_content
+      box-sizing: border-box
+      display: flex
+      justify-content: space-between
+
+      div
+        text-align: center
+        padding: 4rem 1rem
+        border: 0.5px solid #e5e7eb
+        border-radius: 5px
+        margin: 0 15px
+        width: 33%
+
+        p
+          margin-bottom: 1rem
+
+        button
+          border-radius: 5px
+          margin-bottom: 1rem
+
+  .naming_block
+    padding: 8rem 0
+
+    .naming_header
+      text-align: center
+      margin-bottom: 4rem
+
+    .naming_content
+      display: flex
+      justify-content: space-around
+      align-items: center
+
+      .naming_img
+        width: 49%
+        padding-right: 3rem
+
+      .naming_schema
+        width: 49%
+        padding: 0 15px
+
+
+        li
+          position: relative
+          padding: 1rem 0rem 1rem 2.5rem
+          &::before
+            content: ""
+            position: absolute
+            top: 50%
+            left: -0.2rem
+            width: 2rem
+            height: 120%
+            border-left: 1px solid #e7eaf3
+            border-top: 1px solid #e7eaf3
+
+          div
+            position: relative
+            display: flex
+            padding: 2rem
+            border: 1px solid #e7eaf3
+            border-radius: 0.3125rem
+
+            span
+              min-width: 3rem
+              margin-right: 1rem
+              color: #377dff
+              font-weight: 500
+              font-size: 3.5rem
+              line-height: 1.2
+
+        li:last-child
+          &::before
+            top: -50%
+            border-left: 1px solid #e7eaf3
+            border-bottom: 1px solid #e7eaf3
+            
+        li:nth-child(3)
+          &::before
+            top: -50%
+            border: none
+
+.blue_block
+  position: relative
+  background-image: linear-gradient(150deg,#2d1582 0%,#19a0ff 100%)
+  background-repeat: repeat-x
+  overflow: hidden
+
+  img
+    max-width: 13rem
+    position: absolute
+    z-index: 2
+
+  div
+    display: block
+    padding: 2rem 0
+    z-index: 3
+    text-align: center
+    h3
+      margin-bottom: 0.5rem
+      font-weight: 600
+      font-size: 2rem
+      color: #00dffc
+
+    p
+      color: #fff
+      margin-bottom: 1rem
+      font-size: 1.25rem
+      font-weight: 400
+
+.button
+  font-weight: 500
+  background-color: #fff
+  border-color: #fff
+  color: black 
+  padding: 0.75rem 1rem
+  margin: 0.75rem 0
+  border: 1px solid transparent
+  border-radius: 0.3125rem
+  cursor: pointer
+  min-width: 9.6875rem
+  &:hover 
+    .button
+    transition: all 0.2s ease-in-out
+    box-shadow: 0 4px 11px rgb(255 255 255 / 35%)
+    transform: translateY(-0.25em)
+
+
+.blue_block_img1
+  top: 0px
+  left: 0px
+
+.blue_block_img2
+  right: 0px
+  bottom: 0px
+
+.info_wrapper
+
+
+.info_block
+  display: flex
+  max-width: 1140px
+  margin: 0 auto
+  padding: 4rem 15px
+
+  .info_line
+    &::after
+      position: absolute
+      right: -0.9375rem
+      top: 50%
+      height: 4rem
+      border-left: 1px solid rgba(30,32,34,.2)
+      content: ""
+      margin-top: -2rem
+      -webkit-transform: rotate(15deg)
+      transform: rotate(15deg)
+
+  div
+    position: relative
+    text-align: center
+    padding: 0 3rem
+    width: 33%
+
+    span
+      color: #1e2022
+      font-weight: 600
+
+    img
+      height: 77px
+      margin-bottom: 1rem
+
+.contact
+  display: flex
+  max-width: 1140px
+  margin: 0 auto 5rem auto 
+
+  h4
+    font-weight: 400
+    font-size: 1.25rem
+    line-height: 1.5
+    margin-bottom: 0.25rem
+
+  p
+    font-size: 16px
+    color: #77838f
+    line-height: 1.7
+    margin-bottom: 1rem
+
+  .offer
+    box-shadow: 0 10px 40px 10px rgba(140,152,164,.175)
+    border-radius: 0.3125rem
+    max-width: 59%
+    position: relative
+
+    .offer_info
+      padding: 4rem
+
+      .offer_img
+        margin-right: 1rem
+        min-width: 2rem
+        height: 2rem
+        background: rgba(55,125,255,.1)
+        border-radius: 50%
+        div
+          position: relative
+          width: 100%
+          height: 100%
+          span
+            position: absolute
+            left: 40%
+            top: 23%
+            font-family: "Font Awesome 5 Free"
+            font-weight: 900
+            color: #377dff
+            &::before
+              content: '\f105'  
+
+      .offer_info_block_1
+        display: flex
+        padding-bottom: 1rem
+        border-bottom: 1px solid #e7eaf3
+
+      .offer_info_block_2
+        display: flex
+        padding-top: 2rem
+
+        h4
+          font-size: 1.5rem
+
+        a
+          color: #377dff
+
+.questions
+  max-width: 41%
+  background-color: #377dff
+  color: #fff
+  padding: 4rem
+
+  a
+    color: #fff
+    img
+      margin-right: 0.5rem
+
+  h4
+    font-size: 2rem
+    font-weight: 400
+
+  p
+    color: #fff
+
+  .button
+    border-radius: 6.1875rem
+    color: #377dff
+    box-shadow: none
+
+  .phone
+    margin: 0.5rem 0
+    
+.sponsors
+  max-width: 1140px
+  margin: 0 auto 1.5rem auto
+  display: flex
+  justify-content: space-between
+
+  .sponsors_header
+    width: 33%
+
+    h6
+      width: 100%
+      padding-top: 2rem
+      font-size: 1.75rem
+      margin-bottom: 0.5rem
+      font-weight: 400
+
+  .sponsors_list
+    width: 66%
+    display: flex
+    justify-content: space-between
+    border-top: 1px solid #e7eaf3
+    padding-top: 2rem
+    div
+      padding: 0 15px
+      max-width: 25%
