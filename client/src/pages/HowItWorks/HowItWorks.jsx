@@ -31,7 +31,7 @@ function HowItWorks() {
               <div className={ isOn ? styles.video_on : styles.video_off} >
                 <div className={styles.video}>
                   <iframe
-                    width="1120" height="630"  src="https://www.youtube.com/embed/25BkVBgFD9Y" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
+                    src="https://www.youtube.com/embed/25BkVBgFD9Y" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
                   </iframe >
                   <button onClick={() => setIsOn(false)}>X</button>
                 </div>
@@ -181,45 +181,49 @@ function HowItWorks() {
               </div>
             </div>
 
-            <div className={styles.questions}>
-              <h4>Questions?</h4>
-              <p>Speak with a Squadhelp platform expert to learn more and get your questions answered.</p>
-              <button className={styles.button}>Schedule Consultation</button>
-              <div className={styles.phone}>
-                <a href='tel:8773553585'>
-                  <img src={`${CONSTANTS.HOWITWORKS_IMAGES_PATH}phone.svg`} alt="phone" />
-                  (877)&nbsp;355-3585
-                </a>
+            <div className={styles.questions_wrapper}>
+              <div className={styles.questions}>
+                <h4>Questions?</h4>
+                <p>Speak with a Squadhelp platform expert to learn more and get your questions answered.</p>
+                <button className={styles.button}>Schedule Consultation</button>
+                <div className={styles.phone}>
+                  <a href='tel:8773553585'>
+                    <img src={`${CONSTANTS.HOWITWORKS_IMAGES_PATH}phone.svg`} alt="phone" />
+                    (877)&nbsp;355-3585
+                  </a>
+                </div>
+                <p>Call us for assistance</p>
               </div>
-              <p>Call us for assistance</p>
             </div>
           </div>
         </div>
 
-        <div className={styles.sponsors}>
-          <div className={styles.sponsors_header}>
-            <h6>Featured In</h6>
-          </div>
-          <div className={styles.sponsors_list}>
-            <div>
-              <a href="http://www.forbes.com/sites/forbestreptalks/2016/07/11/not-sure-how-to-name-a-startup-squadhelp-will-crowdsource-it-for-199">
-                <img src={`${CONSTANTS.HOWITWORKS_IMAGES_PATH}forbes.svg`} alt="forbes" />
-              </a>
+        <div className={styles.sponsors_wrapper}>
+          <div className={styles.sponsors}>
+            <div className={styles.sponsors_header}>
+              <h6>Featured In</h6>
             </div>
-            <div>
-              <a href="http://thenextweb.com/contributors/crowdsource-startup-name-with-squadhelp/">
-                <img src={`${CONSTANTS.HOWITWORKS_IMAGES_PATH}TNW.svg`}alt="TNW" />
-              </a>
-            </div>
-            <div>
-              <a href="http://www.chicagotribune.com/bluesky/originals/ct-squadhelp-startup-names-bsi-20170331-story.html">
-                <img src={`${CONSTANTS.HOWITWORKS_IMAGES_PATH}chicago.svg`} alt="chicago" />
-              </a>
-            </div>
-            <div>
-              <a href="http://mashable.com/2011/04/01/make-money-crowdworking/">
-                <img src={`${CONSTANTS.HOWITWORKS_IMAGES_PATH}Mashable.svg`} alt="Mashable" />
-              </a>
+            <div className={styles.sponsors_list}>
+              <div>
+                <a href="http://www.forbes.com/sites/forbestreptalks/2016/07/11/not-sure-how-to-name-a-startup-squadhelp-will-crowdsource-it-for-199">
+                  <img src={`${CONSTANTS.HOWITWORKS_IMAGES_PATH}forbes.svg`} alt="forbes" />
+                </a>
+              </div>
+              <div>
+                <a href="http://thenextweb.com/contributors/crowdsource-startup-name-with-squadhelp/">
+                  <img src={`${CONSTANTS.HOWITWORKS_IMAGES_PATH}TNW.svg`}alt="TNW" />
+                </a>
+              </div>
+              <div>
+                <a href="http://www.chicagotribune.com/bluesky/originals/ct-squadhelp-startup-names-bsi-20170331-story.html">
+                  <img src={`${CONSTANTS.HOWITWORKS_IMAGES_PATH}chicago.svg`} alt="chicago" />
+                </a>
+              </div>
+              <div>
+                <a href="http://mashable.com/2011/04/01/make-money-crowdworking/">
+                  <img src={`${CONSTANTS.HOWITWORKS_IMAGES_PATH}Mashable.svg`} alt="Mashable" />
+                </a>
+              </div>
             </div>
           </div>
         </div>

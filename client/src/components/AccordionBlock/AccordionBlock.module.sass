@@ -5,37 +5,43 @@ a
   display: flex
   max-width: 1140px
   margin: 0px auto
-  width: 100%
-
-
-.navigation
   padding: 0 15px
-  max-width: 25%
-  width: 100%
+  @media (max-width: 1024px)
+    flex-direction: column
 
-  nav
-    background-color: #377dff
-    border-radius: 0.3125rem
 
-    ul
-      padding: 1rem 2rem
-      font-size: 1rem
+  .navigation
+    padding: 0 15px
+    width: 25%
+    @media (max-width: 1024px)
+      width: 100%
+      padding: 0
 
-      li
-        padding: 1rem 0
-        color: #e5e7eb
-        &:hover 
-          transition: all 0.2s ease-in-out
-          color: #fff
+    nav
+      background-color: #377dff
+      border-radius: 0.3125rem
 
-.acc_list
-  display: flex
-  flex-direction: column
-  max-width: 74%
-  width: 100%
+      ul
+        padding: 1rem 2rem
+        font-size: 1rem
+
+        li
+          padding: 1rem 0
+          color: #e5e7eb
+          &:hover 
+            transition: all 0.2s ease-in-out
+            color: #fff
+
+  .acc_list
+    display: flex
+    flex-direction: column
+    width: 74%
+    @media (max-width: 1024px)
+      width: 100%
 
 .acc_list_wrapper
   padding: 0 15px
+  width: 97%
 
 .acc_block
   display: flex
@@ -48,6 +54,8 @@ a
     color: #377dff
     font-size: 1.75rem
     margin-bottom: 1rem
+    @media (max-width: 1024px)
+      padding-top: 1rem
 
 .list_header
   padding-top: 4rem
